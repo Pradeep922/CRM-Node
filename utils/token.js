@@ -1,5 +1,4 @@
 import jwt from 'jsonwebtoken';
-// const jwt = require('jsonwebtoken');
 
 export const generateauthtoken = async(user) => {
 
@@ -13,5 +12,3 @@ export const generateauthtoken = async(user) => {
    
     return token;  
 }
-
-// module.exports = generateauthtoken;

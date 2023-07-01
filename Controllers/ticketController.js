@@ -1,4 +1,3 @@
-//const connectToDatabase = require('../database/db');
 import {connectToDatabase} from '../Database/db.js'
 
 export const getTickets = async (req, res) => {
@@ -47,5 +46,3 @@ export const createTicket = async(req, res) => {
     }
    
     }
-
-    //module.exports = { createTicket, getTickets }

@@ -1,8 +1,5 @@
-//const jwt = require('jsonwebtoken');
 import jwt from "jsonwebtoken";
-//const { ObjectId } = require('mongodb');
 import { ObjectId } from "mongodb";
-//const connectToDatabase = require('../database/db');
 import {connectToDatabase} from '../Database/db.js'
 
 const protect = async (req, res, next) => {
@@ -14,8 +11,6 @@ const protect = async (req, res, next) => {
         const token = req.header('Authorization').replace('Bearer ','');
         const verify = await jwt.verify(token, process.env.SECRET_KEY);
         const user = await db.collection('users').findOne({_id: ObjectId(verify._id), "tokens": token});
-
-        //  console.log(user);
 
         if(!user){
             throw new Error('User does not Exsist')
